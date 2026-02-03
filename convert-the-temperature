@@ -1,0 +1,9 @@
+class Solution:
+    def convertTemperature(self, celsius: float) -> List[float]:
+        # write the formula for each conversion
+        # then change it to 5 decimal place 
+        # return
+       Kelvin = round(celsius + 273.15,5) # round method rounds it to 5 decimal point
+       Fahrenheit = round(celsius * 1.80 + 32.00, 5) 
+       return [ Kelvin, Fahrenheit]
+        
