@@ -1,0 +1,9 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    # sort the input array
+    # avpide repititive elements using set
+    
+    Sorted = sorted(set(arr))
+    print(Sorted[-2])
+    
