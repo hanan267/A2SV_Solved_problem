@@ -41,6 +41,7 @@ class Solution:
 # iterate in the range 0-len(nums)+1
 # as going check if any index is missing from the array
 # return it
+        nums = list(sorted(set(nums)))
         for i in range(len(nums)+1):
             if i not in nums:
                 return i
