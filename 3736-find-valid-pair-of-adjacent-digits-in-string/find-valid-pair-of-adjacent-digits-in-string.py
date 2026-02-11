@@ -2,7 +2,7 @@ class Solution:
     def findValidPair(self, s: str) -> str: 
         count = Counter(s)
         s_list = list(s)
-        print(s_list,count)
+        # print(s_list,count)
 
         for left in range(0,len(s_list)-1):
             right = left+1
