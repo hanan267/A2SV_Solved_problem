@@ -1,5 +1,30 @@
 class Solution:
     def frequencySort(self, s: str) -> str:
+
+        c = Counter(s)
+        # print(c)
+        Sort = sorted(c, key=c.get, reverse=True)
+        # print(Sort)
+        res = ""
+        for char in Sort:
+            # temp = c[char]
+            res += (char*c[char])
+
+        return res
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #         # naive approach
 #             # create a hash map and count the frequecy
 #             # create a dictionary of list and map the character and the count
@@ -42,16 +67,7 @@ class Solution:
 #                     res.append(c * i)    # append that char repeated i times
 #             return "".join(res)           # join all pieces into final string
 
-        c = Counter(s)
-        # print(c)
-        Sort = sorted(c, key=c.get, reverse=True)
-        # print(Sort)
-        res = ""
-        for char in Sort:
-            # temp = c[char]
-            res += (char*c[char])
-
-        return res
+       
 
 
 
