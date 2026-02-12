@@ -1,0 +1,24 @@
+t = int(input())
+for _ in range(t):
+  n = int(input())
+  s = input()
+ 
+  window = 2
+  found = False
+ 
+      
+  while window <= n:
+    
+    for i in range(0, n-window+1):
+      sub = s[i:i+window]
+      # print(sub)
+      if sub.count("a") > sub.count("b") and sub.count("a") > sub.count("c"):
+        print(window)
+        found = True
+        break
+    if found:
+      break
+    window += 1
+  if not found:
+    print(-1)
+
