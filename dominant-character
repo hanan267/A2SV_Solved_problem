@@ -7,7 +7,7 @@ for _ in range(t):
   found = False
  
       
-  while window <= n:
+  while window <= 7 and window <= n:
     
     for i in range(0, n-window+1):
       sub = s[i:i+window]
