@@ -1,0 +1,23 @@
+t = 5
+matrix = []
+for _ in range(t):
+  rows = list(map(int, input().split()))
+  matrix.append(rows)
+
+horizonta = 0
+column = 0
+for i, row in enumerate(matrix):
+  if 1 in row:
+    
+    column = i+1
+    horizonta = row.index(1)+1
+# print(column, horizonta)
+    
+
+diff_column = abs(3-horizonta)
+diff_row = abs(3-column)
+print(diff_column+diff_row)
+
+
+
+  
