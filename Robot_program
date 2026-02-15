@@ -1,0 +1,35 @@
+t = int(input())
+for _ in range(t):
+  n, x, k = map(int, input().split())
+  commands = input()
+  # print(commands)
+
+  position = x
+  first_hit = -1
+  for i in range(n):
+    if commands[i] == "L":
+      position -= 1
+    else:
+      position += 1
+    if position == 0:
+      first_hit = i+1
+      break
+  if first_hit == -1 or first_hit > k:
+    print(0)
+    continue
+  position = 0
+  circle_hit = -1
+  for i in range(n):
+    if commands[i] == "L":
+      position -= 1
+    else:
+      position += 1
+    if position == 0:
+      circle_hit = i+1
+      break
+  if circle_hit == -1:
+    print(1)
+  else:
+    remaining = k - first_hit
+    time = 1+(remaining//circle_hit)
+    print(time)
