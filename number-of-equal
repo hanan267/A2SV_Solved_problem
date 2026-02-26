@@ -1,0 +1,14 @@
+from collections import Counter
+
+n, m = map(int, input().split())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+
+c1 = Counter(a)
+c2 = Counter(b)
+
+res = 0
+for key, value in c1.items():
+  if key in c2:
+    res += value*c2[key]
+print(res)
