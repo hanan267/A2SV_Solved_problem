@@ -1,0 +1,16 @@
+t = int(input())
+for _ in range(t):
+  n, k = map(int, input().split())
+  casinos = []
+  for _ in range(n):
+    row = list(map(int, input().split()))
+    casinos.append(row)
+  
+  casinos.sort()
+  for left, right, coin in casinos:
+   
+    if left > k:
+      break
+    elif left <= k <= right:
+      k = max(coin, k)
+  print(k)
