@@ -1,0 +1,19 @@
+n, s = map(int, input().split())
+a = list(map(int, input().split()))
+
+Sum = 0
+l = 0
+
+count = 0
+for i in range(len(a)):
+  Sum += a[i]
+
+  while Sum > s:
+    Sum -= a[l]
+    l += 1
+  count += (i-l+1)
+  
+  
+print(count)
+
+  
