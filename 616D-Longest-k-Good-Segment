@@ -1,0 +1,26 @@
+from collections import defaultdict
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
+
+w = defaultdict(int)
+l = 0
+maxLen = 0
+for i in range(n):
+  w[a[i]] += 1
+
+  while len(w) > k:
+    w[a[l]] -= 1
+    if w[a[l]] == 0:
+      del w[a[l]]
+    l += 1
+  if (i-l+1) > maxLen:
+    maxLen = (i-l+1)
+    left = l
+    right = i
+
+
+  
+print(left+1, right+1)
+
+  
+  
