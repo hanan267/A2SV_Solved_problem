@@ -1,0 +1,45 @@
+from collections import Counter
+t = int(input())
+for _ in range(t):
+    s = input()
+    t = input()
+    
+    countt = Counter(t)
+    counts = Counter(s)
+    impossible = False
+    for chars in s:
+       if countt[chars] < counts[chars]:
+          impossible = True
+          break
+    if impossible:
+       print("Impossible")
+       continue
+    for key in counts.keys():
+      if countt[key] > 0:
+         countt[key] -= counts[key]
+    # print(counts, countt)
+    leftOver = []
+    for char in countt:
+       if countt[char] == 0:
+          continue
+       leftOver.append(char*countt[char])
+    leftOver.sort()
+    leftOver = "".join(leftOver)
+    # print(leftOver)
+    
+    res = ""
+    spointer = 0
+    ppointer = 0
+    slen = len(s)
+    leftOverLen = len(leftOver)
+
+    while ppointer < leftOverLen and spointer < slen:
+       if s[spointer] <= leftOver[ppointer]:
+          res += s[spointer]
+          spointer += 1
+       elif s[spointer] > leftOver[ppointer]:
+          res += leftOver[ppointer]
+          ppointer += 1
+    res += s[spointer:]
+    res += leftOver[ppointer:]
+    print(res)
