@@ -1,0 +1,18 @@
+from collections import defaultdict
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
+
+l= 0 
+count = 0
+window = defaultdict(int)
+for r in range(n):
+  window[a[r]] += 1
+
+  while len(window) > k:
+    window[a[l]] -= 1
+    if window[a[l]] == 0:
+      del window[a[l]]
+    l += 1
+  count += r-l+1
+print(count)
+  
