@@ -1,0 +1,17 @@
+n, k = map(int, input().split())
+a = list(map(int, input().split()))
+
+
+if k == 1:
+  print(a[-1] - a[0])
+else:
+  diff = []
+  for i in range(n-1):
+    diff.append(a[i+1]-a[i])
+  
+  total = a[-1] - a[0]
+  diff.sort(reverse=True)
+  removes = sum(diff[:k-1])
+
+  print(total-removes)
+
