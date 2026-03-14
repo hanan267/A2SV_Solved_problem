@@ -1,8 +1,8 @@
 class Solution:
     def longestSubarray(self, nums: List[int], limit: int) -> int:
 
-        minq = deque() # increasing
-        maxq = deque() #  decreasing
+        minq = deque()
+        maxq = deque()
         res = 0
         l = 0
         for r in range(len(nums)):
