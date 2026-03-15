@@ -10,14 +10,8 @@ class Solution:
         for i in range(0,len(nums)-2):
             if nums[i] == 0:
                 nums[i] = 1
-                if nums[i+1] == 0:
-                    nums[i+1] = 1
-                else:
-                    nums[i+1] = 0
-                if nums[i+2] == 0:
-                    nums[i+2] = 1
-                else:
-                    nums[i+2] = 0
+                nums[i+1] = 1 - nums[i+1]
+                nums[i+2] = 1 - nums[i+2]
                 oper += 1
             # print(nums)
         
