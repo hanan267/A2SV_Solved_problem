@@ -14,7 +14,7 @@ class Solution:
         # return False
 
         stack = []
-        smaller = [nums[0]]
+        smaller = nums[0]
 
         for num in nums[1:]:
             while stack and num >= stack[-1][0]:
@@ -22,8 +22,8 @@ class Solution:
             if stack and num < stack[-1][0] and num > stack[-1][1]:
                 return True
             
-            stack.append([num, smaller[-1]])
-            smaller.append(min(num, smaller[-1]))
+            stack.append([num, smaller])
+            smaller = (min(num, smaller))
         return False
 
 
