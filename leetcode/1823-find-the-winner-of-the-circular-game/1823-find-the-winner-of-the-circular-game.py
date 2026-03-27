@@ -21,7 +21,7 @@ class Solution:
         arr = []
         for i in range(1, n+1):
             arr.append(i)
-        print(arr)
+        # print(arr)
 
         def kthNum(idx,arr):
             if len(arr) == 1:
