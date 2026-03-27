@@ -10,18 +10,18 @@ class Solution:
         def sameRoot(root, subroot):
             if not root and not subroot:
                 return True
-                
             if not root or not subroot:
                 return False
-                  
+            
             if root.val == subroot.val:
                 return sameRoot(root.left, subroot.left) and sameRoot(root.right, subroot.right)
             else:
                 return False
         if not root:
             return False
-        if sameRoot(root, subRoot):
+        elif sameRoot(root, subRoot):
             return True
+        
         return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
 
 
