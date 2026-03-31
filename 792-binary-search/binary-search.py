@@ -7,7 +7,7 @@ class Solution:
 
         while low <= high:
             mid = (low+high) // 2
-            print(nums[mid], mid)
+            # print(nums[mid], mid)
             if nums[mid] == target:
                 return mid
             elif nums[mid] > target:
