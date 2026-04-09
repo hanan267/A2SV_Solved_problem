@@ -1,1 +1,1 @@
-<h2>sort-the-people Notes</h2><hr>[ Time taken: 36 m 3 s ]
+<h2>sort-the-people Notes</h2><hr>[ Time taken: 17m 24s ]
