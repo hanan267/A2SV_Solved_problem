@@ -2,23 +2,20 @@ class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
        
         n = len(nums)
-        numsSet = set(nums)
-        print(numsSet)
+        i = 0
         res = []
 
-        for i in range(1, n+1):
-                if i not in numsSet:
-                    res.append(i)
-                    
-       
+        while i < n:
+                correct = nums[i] - 1
+                if nums[correct] != nums[i]:
+                    nums[i], nums[correct] = nums[correct], nums[i]
+                else:
+                    i += 1
 
-        for num in nums:
-            if num in numsSet:
-                numsSet.remove(num)
-            else:
-                res.append(num)
-        res.reverse()
-        return res
+        for i in range(n):
+            if i+1 != nums[i]:
+                return [nums[i],i+1]
+
 
 
 
