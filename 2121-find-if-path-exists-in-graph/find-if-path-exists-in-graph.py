@@ -1,5 +1,29 @@
 class Solution:
-    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:   # Using BFS
+
+        graph = defaultdict(list)
+
+        for s, t in edges:
+            graph[s].append(t)
+            graph[t].append(s)
+        
+        seen = set()
+        seen.add(source)
+        q = deque()
+        q.append(source)
+
+        while q:
+            node = q.popleft()
+            if node == destination:
+                return True
+            for adj_node in graph[node]:
+                if adj_node not in seen:
+                    seen.add(adj_node)
+                    q.append(adj_node)
+                   
+                       
+        return False 
+
         # DFS with stack
 
         graph = defaultdict(list)
