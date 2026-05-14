@@ -1,0 +1,43 @@
+class DSU:
+  def __init__(self, n):
+    self.parent = list(range(n+1))
+    self.rank = [1] * (n+1)
+  def find(self, x):
+    while x != self.parent[x]:
+      x = self.parent[x]
+    return x
+  def union(self, x, y):
+    rootx = self.find(x)
+    rooty = self.find(y)
+
+    if rootx == rooty:
+      return
+    
+    if self.rank[rootx] < self.rank[rooty]:
+      self.parent[rootx] = rooty
+    else:
+      self.parent[rooty] = rootx
+      if self.rank[rootx] == self.rank[rooty]:
+        self.rank[rootx] += 1
+
+n, m, k = map(int, input().split())
+
+edges = [tuple(map(int, input().split())) for _ in range(m)]
+operations = [input().split() for _ in range(k)]
+
+dsu = DSU(n)
+res = []
+
+for oper in reversed(operations):
+  if oper[0] == "ask":
+      u, v = int(oper[1]), int(oper[2])
+      if dsu.find(u) == dsu.find(v):
+        res.append("YES")
+      else:
+        res.append("NO")
+  else:
+    dsu.union(int(oper[1]), int(oper[2]))
+
+res.reverse()
+
+print("\n".join(res))
