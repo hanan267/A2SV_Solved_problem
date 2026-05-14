@@ -1,0 +1,46 @@
+class UnionF:
+  def __init__(self, n):
+    self.parent = list(range(n+1))
+    self.size = [1]*(n+1)
+  def find(self, x):
+    while x != self.parent[x]:
+      x = self.parent[x]
+    return x
+  def union(self, x, y):
+    rootx = self.find(x)
+    rooty = self.find(y)
+
+    if rootx == rooty:
+      return False
+    
+    if self.size[rootx] > self.size[rooty]:
+      self.parent[rooty] = rootx
+      self.size[rootx] += self.size[rooty]
+    else:
+      self.parent[rootx] = rooty
+      self.size[rooty] += self.size[rootx]
+    return True
+  
+n, m = map(int, input().split())
+def solve(n, m):
+  connection = []
+  for i in range(m):
+    u, v, w = map(int, input().split())
+    connection.append((w, u, v))
+  connection.sort()
+  
+  unionFind = UnionF(n)
+  count = 0
+  res = 0
+
+  for w, u, v in connection:
+    if unionFind.union(u, v):
+      count += 1
+      res += w
+    if count == (n-1):
+      break
+  return res
+
+print(solve(n, m))
+  
+
