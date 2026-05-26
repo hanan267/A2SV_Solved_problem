@@ -26,5 +26,8 @@ class Solution:
                     union_find.union(num, factor)
                     union_find.union(num, num // factor)
                 factor += 1
+        arr = []
+        for num in nums:
+            arr.append(union_find.find(num))
         component_sizes = Counter(union_find.find(num) for num in nums)
         return max(component_sizes.values())
