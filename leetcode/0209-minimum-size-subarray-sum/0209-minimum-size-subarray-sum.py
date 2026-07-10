@@ -6,7 +6,7 @@ class Solution:
         n = len(nums)
         Sum = 0
         temp = 0
-        res = n
+        res = float('inf')
         total = sum(nums)
         if total < target:
             return 0
@@ -24,7 +24,7 @@ class Solution:
                 #     del store[nums[left]]
                 Sum -= nums[left]
                 left += 1
-        return res
+        return 0 if res == float("inf") else res
            
 
             
