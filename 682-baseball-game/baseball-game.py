@@ -5,8 +5,7 @@ class Solution:
       nums = []
 
       for i in range(len(operations)):
-        print(operations[i])
-        print(nums)
+        
         if operations[i] == "+":
             nums.append(nums[-1] + nums[-2])
             
