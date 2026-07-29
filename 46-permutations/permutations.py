@@ -1,29 +1,22 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        
 
-        res = []
+        res, temp = [], []
+
         n = len(nums)
-        def backTrack(temp, visited):
+
+        def backtracking():
             if len(temp) == n:
                 res.append(temp[:])
-                return
+                return 
             
-            for i in range(n):
-                if visited[i]:
-                    continue
-                
-                visited[i] = True
-                temp.append(nums[i])
-
-                backTrack(temp, visited)
-
-                temp.pop()
-                visited[i] = False
-
-
-        backTrack([], [False]*n)
+            for num in nums:
+                if num not in temp:
+                    temp.append(num)
+                    backtracking()
+                    temp.pop()
+        backtracking()
         return res
 
-
         
+    
