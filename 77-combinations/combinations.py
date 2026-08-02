@@ -2,21 +2,21 @@ class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
 
         res = []
-        def dfs(start, temp):
-            if len(temp) == k:
-                res.append(temp[:])
-                return
-            # pruning
-            if start > n:
+
+        def backtrack(start, comb):
+
+            if len(comb) == k:
+                res.append(comb[:])
                 return
             
-            temp.append(start)
-            dfs(start+1, temp)
-            temp.pop()
-            dfs(start+1, temp)
-        
-        dfs(1, [])
+            for i in range(start, n+1):
+                comb.append(i)
+                backtrack(i+1, comb)
+                comb.pop()
+        backtrack(1, [])
         return res
+
+        
 
         
         
