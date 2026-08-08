@@ -28,9 +28,7 @@ class Solution:
                 if result != -1:
                     return value * result
             return -1
-
         answer = []
-
         for a, b in queries:
             answer.append(dfs(a, b, set()))
 
