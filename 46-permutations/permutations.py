@@ -5,6 +5,7 @@ class Solution:
 
         n = len(nums)
 
+        
         def backtracking():
             if len(temp) == n:
                 res.append(temp[:])
