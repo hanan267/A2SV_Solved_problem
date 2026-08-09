@@ -10,7 +10,7 @@ class Solution:
         pos = {}
         for i in range(len(inorder)):
             pos[inorder[i]] = i
-        #print(pos)
+        print(pos)
         def build(left, right):
             #print(left, right)
             if left > right:
