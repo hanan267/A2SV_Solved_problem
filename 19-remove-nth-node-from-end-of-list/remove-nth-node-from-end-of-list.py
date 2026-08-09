@@ -18,7 +18,7 @@ class Solution:
         while first:
             first = first.next
             second = second.next
-            # print("first",first)
+            print("first",first)
             # print("second", second)
         second.next = second.next.next
         
