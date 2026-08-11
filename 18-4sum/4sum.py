@@ -20,9 +20,7 @@ class Solution:
 
                 while left < right:
                     total = nums[i] + nums[j] + nums[left] + nums[right]
-
-                    # print(nums[i], nums[j], nums[left], nums[right], total)
-
+                
                     if total == target:
                         ans.append([nums[i],nums[j],nums[left],nums[right]])
                         left += 1
@@ -37,6 +35,5 @@ class Solution:
                         left += 1
                     else:
                         right -= 1
-
         return ans
 
