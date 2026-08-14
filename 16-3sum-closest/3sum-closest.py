@@ -8,7 +8,7 @@ class Solution:
 
           left, right = i + 1, n - 1
           while left < right:
-                curr = nums[i] + nums[left] + nums[right]
+                curr = nums[i]+ nums[left] + nums[right]
                 if abs(curr - target) < abs(closest - target):
                     closest = curr               
                 if curr < target:
