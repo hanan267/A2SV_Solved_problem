@@ -5,8 +5,8 @@ class Solution:
         count = 1
         j = 1
         n = len(nums)
-
         for i in range(1, n):
+            # print(nums[i], count)
             if nums[i] == nums[i-1]:
                 count += 1
             else:
@@ -15,4 +15,5 @@ class Solution:
             if count <= 2:
                 nums[j] = nums[i]
                 j += 1
+            # print(nums[i], count)
         return j
