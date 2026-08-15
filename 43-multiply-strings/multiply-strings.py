@@ -2,7 +2,7 @@ class Solution:
     def multiply(self, num1: str, num2: str) -> str:
         
 
-
+        ans = ""
         if num1 == "0" or num2 == "0":
             return "0"
         result = [0]* (len(num1) + len(num2))
@@ -20,11 +20,11 @@ class Solution:
                     result[position - 1] += total // 10
                     j -= 1
                 i -= 1
-        answer = ""
+        
         started = False
         for digit in result:
             if digit != 0:
                 started = True
             if started:
-                answer += str(digit)
-        return answer
+                ans += str(digit)
+        return ans
