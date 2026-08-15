@@ -1,5 +1,7 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
+
+
         def inbound(i, j):
             return (0 <= i < len(grid) and 0 <= j < len(grid[0]))
 
@@ -12,7 +14,6 @@ class Solution:
                 dfs(i, j-1)
                 dfs(i+1, j)
                 dfs(i-1, j)
-
         island = 0
         for i in range(len(grid)):
             for j in range(len(grid[0])):
