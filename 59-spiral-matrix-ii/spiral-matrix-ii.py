@@ -1,8 +1,6 @@
 class Solution:
     def generateMatrix(self, n: int) -> List[List[int]]:
-
-    
-
+        
         a = [[0]*n for i in range(n)]
         t = 0
         b = n - 1
