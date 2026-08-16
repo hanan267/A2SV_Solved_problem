@@ -2,16 +2,15 @@ class Solution:
     def hIndex(self, citations: List[int]) -> int:
         
         n = len(citations)
-        paper_count = [0] * (n+1)
-
-        for num in citations:
-            paper_count[min(num, n)] += 1
+        papercnt = [0] * (n+1)
         
+        for num in citations:
+            papercnt[min(num, n)] += 1
         h = n
-        papers = paper_count[n]
+        papers = papercnt[n]
 
         while papers < h:
             h -= 1
-            papers += paper_count[h]
+            papers += papercnt[h]
         return h                    
             
