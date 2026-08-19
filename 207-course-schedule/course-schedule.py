@@ -3,12 +3,12 @@ class Solution:
 
         n = numCourses
         graph = defaultdict(list)
-
         state = [0] * n
 
         for i, j in prerequisites:
             graph[i].append(j)
 
+        # Time O(E + N)
         unvisited = 0
         visiting = 1
         visited = 2
@@ -18,13 +18,11 @@ class Solution:
                 return True
             elif state[node] == visiting:
                 return False
-            
             state[node] = visiting
 
             for adj in graph[node]:
                 if not dfs(adj):
                     return False
-
             state[node] = visited
             return True
         
@@ -34,6 +32,6 @@ class Solution:
         return True
 
 
-        # Time O(E + N)
+        
                     
         
