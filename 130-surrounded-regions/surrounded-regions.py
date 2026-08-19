@@ -1,8 +1,6 @@
 class Solution:
     def solve(self, board: List[List[str]]) -> None:
-        """
-        Do not return anything, modify board in-place instead.
-        """
+        
         def inbound(row, col):
             return ( 0 <= row < len(board) and 0 <= col < len(board[0]))
         
