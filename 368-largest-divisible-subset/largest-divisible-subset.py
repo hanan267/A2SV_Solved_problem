@@ -16,7 +16,6 @@ class Solution:
             if dp[i] > mx:
                 mx = dp[i]
                 idx = i
-
         ans = []
         while idx != -1:
             ans.append(nums[idx])
