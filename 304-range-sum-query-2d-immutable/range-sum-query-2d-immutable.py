@@ -4,9 +4,7 @@ class NumMatrix:
             return
 
         row, col = len(matrix), len(matrix[0])
-
         self.pref = [[0]*(col+1) for i in range((row)+1)]
-
         for r in range(1, row+1):
           for c in range(1, col+1):
             self.pref[r][c] = (
@@ -15,8 +13,6 @@ class NumMatrix:
                 self.pref[r][c-1]
                 -self.pref[r-1][c-1]
             )
-        
-
     def sumRegion(self, row1, col1, row2, col2):
         return (
                 self.pref[row2+1][col2+1]
