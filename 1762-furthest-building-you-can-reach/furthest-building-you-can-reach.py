@@ -3,7 +3,9 @@ class Solution:
          
         n = len(heights)
         diffHeap = []
+
         for i in range(n-1):
+            
             diff = heights[i+1] - heights[i]
             if diff <= 0:
                 continue
