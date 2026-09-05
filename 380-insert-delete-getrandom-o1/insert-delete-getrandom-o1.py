@@ -16,12 +16,10 @@ class RandomizedSet:
       
         if val not in self.randomSet:
             return False
+            
         self.randomSet.remove(val)
         return True
-        # if val in self.randomSet:
-        #     self.randomSet.remove(val)
-        #     return True
-        # return False      
+         
 
     def getRandom(self) -> int:
         return random.choice(tuple(self.randomSet))
