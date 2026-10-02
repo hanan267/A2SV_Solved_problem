@@ -1,37 +1,28 @@
 class Solution:
     def isValid(self, s: str) -> bool:
+
         stack = []
+
         brackets = {
             ']':'[',
             '}':'{',
             ')':'('
         }
-
-        # for chars in s:
-        #     if chars in brackets.values():
-        #         stack.append(chars)
-        #     elif chars in brackets.keys():
-        #         if stack and stack[-1] == brackets[chars]:
-        #             stack.pop()
-        #         else:
-        #             return False 
-        # return len(stack) == 0
-
-
-        for char in s:
-            if char in brackets.values():
-                stack.append(char)
-            elif char in brackets.keys(): 
-                if stack and stack[-1] == brackets[char]:
-                    stack.pop()
-                else:
-                    return False
-        return len(stack) == 0
-
-       
-
-
-
+        
+        if len(s) == 1:
+            return False
+            
+        for bracket in s:
+            if bracket not in brackets:
+                stack.append(bracket)
+            elif bracket in brackets and not stack:
+                return False
+            elif stack and brackets[bracket] != stack[-1]:
+                return False
+            elif stack:
+                stack.pop()
+            
+        return not stack
 
 
 
