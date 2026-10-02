@@ -1,16 +1,18 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 
+        
         res = defaultdict(list)
-
-        for s in strs:
+        
+        for word in strs:
             count = [0]*26
-
-            for c in s:
-                count[ord(c)-ord("a")] += 1
-
-            res[tuple(count)].append(s)
+            for letter in word:
+                count[ord(letter) - ord("a")] += 1
+            
+            res[tuple(count)].append(word)
         return list(res.values())
+
+
 
         # time-complexity -- O(k+n)
         # space-complexity -- O(26*n)
