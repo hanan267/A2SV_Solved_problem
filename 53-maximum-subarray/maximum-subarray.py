@@ -1,6 +1,7 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         
+        # used Kadan's Theorem
         total = nums[0]
         maxTot = nums[0]
 
